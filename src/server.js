@@ -3,6 +3,7 @@ const routes = require('./routes')
 const morgan = require('morgan')
 const path = require('path')
 var cors = require('cors')
+require('dotenv').config()
 
 const app = express()
 
@@ -14,4 +15,4 @@ app.use(morgan('dev'))
 
 app.use(routes)
 
-app.listen(3333)
+app.listen(process.env.PORT || 3333)
